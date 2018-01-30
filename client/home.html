@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>vuejs-appstructure</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="/image/logo/ico.png" sizes="48x48" />
+    <!-- Global stylesheets -->
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/styleAnimation.css">
+  </head>
+  <body>
+    <!--------------------------------Main Code----------------------------------->
+    <div id="main"></div>
+    <!---------------------------------------------------------------------------->
+    
+    <!----------------------------- Core JS files -------------------------------->
+    <!---------------------------- Core object ----------------------------->
+    <script>
+      var BUTO = {
+        requires: null,
+        templates: null
+      };
+    </script>
+    <!--------------------------- /Core object ----------------------------->
+    
+    <!----------------- Development framework inclusion -------------------->
+    <script type="text/javascript" src="/js/vue.js"></script>
+    <!---------------- /Development framework inclusion -------------------->
+    
+    <!----------------- Production framework inclusion --------------------->
+    <!--<script type="text/javascript" src="/js/vue.min.js"></script>-->
+    <script type="text/javascript" src="/js/vue-resource.js"></script>
+    <!---------------- /Production framework inclusion --------------------->
+    
+    <!------------------------- Development file --------------------------->
+    <script type="text/javascript" src="/build/main.bundle.js"></script>
+    <!------------------------ /Development file --------------------------->
+    
+    <!------------------------- Production file ---------------------------->
+    <!--<script type="text/javascript" src="/build/main.min.js"></script>-->
+    <!------------------------ /Production file ---------------------------->
+    
+    <!---------------------------- /core JS files -------------------------------->
+
+  </body>
+</html>
