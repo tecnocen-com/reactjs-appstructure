@@ -7,16 +7,10 @@ var path = require("path"),
 };
 //var dbConection = require("./dbConection");	//Módulo personalizado de conexión a Mongodb
 function init(request, response){
-	if(request.reactJSAppStructure && request.reactJSAppStructure.userData)
+	if(request.vueJSAppStructure && request.vueJSAppStructure.userData)
     response.sendFile(path.join(__dirname, "client/home.html"));
 	else
 		response.sendFile(path.join(__dirname, "client/index.html"));
-}
-function home(request, response){
-	if(request.reactJSAppStructure && request.reactJSAppStructure.userData)
-		response.sendFile(path.join(__dirname, "client/home.html"));
-	else
-		response.redirect("/");
 }
 function login(request, response, data){
 	var parsedData = JSON.parse(data);
@@ -37,7 +31,7 @@ function login(request, response, data){
     else{
       var body = JSON.parse(bodyRequest);
       if(body.status !== 401){
-        request.reactJSAppStructure.userData = {
+        request.vueJSAppStructure.userData = {
           access_token: body.access_token
         };
       }
@@ -47,13 +41,13 @@ function login(request, response, data){
   });
 }
 function initUserData(request, response){
-	if(request.reactJSAppStructure && request.reactJSAppStructure.userData){
+	if(request.vueJSAppStructure && request.vueJSAppStructure.userData){
 		response.writeHead(200, {"Content-Type": "json/application"}); //Escribimos cabecera (Typo de contenido, texto tipo html)
 		response.end(JSON.stringify({
       success: true,
       baseURL: serviceUrl.baseURL,
       dataURL: serviceUrl.dataURL,
-      access_token: request.reactJSAppStructure.userData.access_token,
+      access_token: request.vueJSAppStructure.userData.access_token,
       apiKey: serviceUrl.apiKey
     }));  //Terminamos respuesta
 	}
@@ -64,5 +58,4 @@ function initUserData(request, response){
 }
 exports.init = init;
 exports.login = login;
-exports.home = home;
 exports.initUserData = initUserData;

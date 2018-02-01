@@ -1,4 +1,4 @@
-reactjs-appstructure
+vuejs-appstructure
 ============
 ## Translations
 * [English]
@@ -44,12 +44,12 @@ Where ```<VERSION>``` is the last installed version.
 ### Proyect installation
 #### Clone repository:
 ```bash
-$ git clone https://github.com/tecnocen-com/reactjs-appstructure.git
+$ git clone https://github.com/tecnocen-com/vuejs-appstructure.git
 ```
 
 #### Place in the project root path:
 ```bash
-$ cd reactjs-appstructure
+$ cd vuejs-appstructure
 ```
 
 #### Define all the initial data of your project:
@@ -68,12 +68,12 @@ Line 6 ```tokenURL``` refers to the part of the URL to access the ROA service au
 * **```package.json```:** In this file you'll define some other data of your project.
 ```bash
 ...
-2 |   "name": "reactjs-appstructure",
+2 |   "name": "vuejs-appstructure",
 3 |   "version": "0.1.0",
-4 |   "description": "Structure for web applications based on reactJS framework",
+4 |   "description": "Structure for web applications based on vueJS framework",
 ...
 10 |   "keywords": [
-11 |     "reactJS"
+11 |     "vueJS"
 12 |   ],
 13 |   "author": "Marcos Jesús Chávez Vega",
 14 |   "license": "ISC",
@@ -89,7 +89,7 @@ Line 14 ```"license"``` refers to the project author, edit with appropiated lice
 * **```CHANGELOG.md```:** In this file you'll define all functions of the project, read more about this on [arquitecture standards] of tecnocen, on section [changes control].
 ```bash
 ...
-1 | reactjs-appstructure
+1 | vuejs-appstructure
 ...
 ```
 Line 1 refers to project name, edit with appropiated name.
@@ -97,11 +97,11 @@ Line 1 refers to project name, edit with appropiated name.
 * **```README.md```:** In this file you'll define all the project characteristics, such as installation, use and definition.
 ```bash
 ...
-1 | reactjs-appstructure
+1 | vuejs-appstructure
 ...
-57 | $ git clone https://github.com/tecnocen-com/reactjs-appstructure.git
+57 | $ git clone https://github.com/tecnocen-com/vuejs-appstructure.git
 ...
-63 | $ cd reactjs-appstructure
+63 | $ cd vuejs-appstructure
 ...
 ```
 Line 1 refers to the project name, edit with appropiated value.
@@ -121,17 +121,18 @@ $ npm install
     * ```assets```: in this directory will exists all files involved with a predefined template that could be used.
     * ```file```: in this directory will exists all files involved with project processes (such as PDF, XLSX, etc...).
     * ```image```: in this directory will exists all images involved with project processes.
-    * ```js```: in this directory will exists all JS files involved with the project.
-        * ```component```: in this directory will exists all components JS files per view.
-            * ```common```: in this directory will exists all components JS files involved over all the project views.
-        * ```plugins```: in this directory will exists all JS files generated as plugins.
-        * ```template```: in this directory will exists all components renderers JS files per view.
-            * ```common```: in this directory will exists all components renderers JS files involved over all the project views.
     * ```style```: in this directory will exists all style files.
+    * ```js```: in this directory will exists all JS files involved with the project.
+        * ```home```: in this directory will exists all components JS files per view, once you are logged in.
+            * ```plugins```: in this directory will exists all JS files generated as plugins.
+            * ```common```: in this directory will exists all components JS files involved over all the project views.
+            * ```dashboard```: in this directory will exists all components JS files related to dashboard.
+            * ```test```: in this directory will exists all components JS files related to test page.
+        * ```index```: in this directory will exists all components JS files per view, without any authentication.
 
 NOTES:
-- Directory ```test``` inside of ```component``` and ```template```, has an starting component view example, which could be duplicated any time it's needed in order to have the real project running.
-- To include the duplicated components to the views of the project, they should be included in both files ```main.js``` and ```mainT.js``` inside of the directory ```js``` in orde to include and render them; and so on in ```menu.js``` file inside of the ```common``` directory.
+- Directory ```test``` inside of ```home```, has an starting component view example, which could be duplicated any time it's needed in order to have the real project running.
+- To include the duplicated components to the views of the project, they should be included in both files ```home.js``` and ```homeT.js``` inside of the directory ```home``` in orde to include and render them; and so on in ```menu.js``` file inside of the ```common/menu``` directory.
 
 ## Visibility
 #### Changes visibility:
@@ -170,34 +171,42 @@ After this, all the next files should be updated:
 * **```client/index.html```:** In this file will be included all the login minified files.
 ```bash
 ...
-26 |     <script type="text/javascript" src="/js/react.js"></script>
+24 |     <script type="text/javascript" src="/js/vue.js"></script>
+25 |     <script type="text/javascript" src="/js/vue-router.js"></script>
+26 |     <script type="text/javascript" src="/js/axios.js"></script>
 ...
-30 |     <!--<script type="text/javascript" src="/js/react.min.js"></script>-->
+30 |     <!--<script type="text/javascript" src="/js/vue.min.js"></script>
+31 |     <script type="text/javascript" src="/js/vue-router.min.js"></script>
+32 |     <script type="text/javascript" src="/js/axios.min.js"></script>-->
 ...
-35 |     <script type="text/javascript" src="/build/login.bundle.js"></script>
+36 |     <script type="text/javascript" src="/build/index.bundle.js"></script>
 ...
-39 |     <!--<script type="text/javascript" src="/build/login.min.js"></script>-->
+40 |     <!--<script type="text/javascript" src="/build/index.min.js"></script>-->
 ...
 ```
-Line 26 should be commented, because it includes reactJS in development environment.
-Line 30 should be uncommented, because it includes reactJS in production environment.
-Line 35 should be commented, because it includes all webpack core files in development environment.
-Line 39 should be uncommented, because it includes all webpack core files in production environment.
+Lines 24 to 26 should be commented, because it includes vueJS in development environment.
+Lines 30 to 32 should be uncommented, because it includes vueJS in production environment.
+Line 36 should be commented, because it includes all webpack core files in development environment.
+Line 40 should be uncommented, because it includes all webpack core files in production environment.
 
 * **```client/home.html```:** In this file will be included all the rest of minified files in the project.
 ```bash
 ...
-29 |     <script type="text/javascript" src="/js/react.js"></script>
+26 |     <script type="text/javascript" src="/js/vue.js"></script>
+27 |     <script type="text/javascript" src="/js/vue-router.js"></script>
+28 |     <script type="text/javascript" src="/js/axios.js"></script>
 ...
-33 |     <!--<script type="text/javascript" src="/js/react.min.js"></script>-->
+32 |     <!--<script type="text/javascript" src="/js/vue.min.js"></script>
+33 |     <script type="text/javascript" src="/js/vue-router.min.js"></script>
+34 |     <script type="text/javascript" src="/js/axios.min.js"></script>-->
 ...
-38 |     <script type="text/javascript" src="/build/main.bundle.js"></script>
+38 |     <script type="text/javascript" src="/build/home.bundle.js"></script>
 ...
-42 |     <!--<script type="text/javascript" src="/build/main.min.js"></script>-->
+42 |     <!--<script type="text/javascript" src="/build/home.min.js"></script>-->
 ...
 ```
-Line 29 should be commented, because it includes reactJS in development environment.
-Line 33 should be uncommented, because it includes reactJS in production environment.
+Lines 26 to 28 should be commented, because it includes vueJS in development environment.
+Lines 32 to 34 should be uncommented, because it includes vueJS in production environment.
 Line 38 should be commented, because it includes all webpack core files in development environment.
 Line 42 should be uncommented, because it includes all webpack core files in production environment.
 

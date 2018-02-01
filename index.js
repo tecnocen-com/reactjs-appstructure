@@ -4,16 +4,13 @@ var express = require("express"),
   session = require("client-sessions"),           //Sessions handler from mozilla
   requestHandlers = require("./requestHandlers"); //Modulo customizado para actuar según URL
 app.use(session({
-  cookieName: "reactJSAppStructure",
+  cookieName: "vueJSAppStructure",
   secret: "sapasdasdopaks+oaskdsfisdudfdssdpuohsdfsdf",
   duration: 24*60*60*1000,       //Milliseconds, 1 hour will kill cookie
   activeDuration: 15*60*1000,  //Milliseconds, 5 minutes of inactivity will kill cookie
 }));
 app.get("/", function(request, response){
   requestHandlers.init(request, response);
-});
-app.get("/home", function(request, response){
-  requestHandlers.home(request, response);
 });
 app.post("/login", function(request, response){     //Doesn"t support express.static
   var data = "";
@@ -24,7 +21,7 @@ app.post("/login", function(request, response){     //Doesn"t support express.st
   });
 });
 app.get("/logout", function(request, response){
-  request.reactJSAppStructure.reset();
+  request.vueJSAppStructure.reset();
   response.redirect("/");
 });
 app.get("/init-user-data", function(request, response){
@@ -38,7 +35,8 @@ app.use("/assets", express.static(__dirname + "/client/assets"));
 app.use("/build", express.static(__dirname + "/build"));
 
 app.use("/js", express.static(__dirname + "/node_modules/vue/dist"));
-app.use("/js", express.static(__dirname + "/node_modules/vue-resource/dist"));
+app.use("/js", express.static(__dirname + "/node_modules/vue-router/dist"));
+app.use("/js", express.static(__dirname + "/node_modules/axios/dist"));
 
 //MongoClient.connect("mongodb://127.0.0.1:27017/alquimiaDB", function(error, database){
 //  if(error)
