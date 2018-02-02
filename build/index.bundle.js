@@ -18393,8 +18393,8 @@ class Login extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             "div",
             null,
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(MyInput, { type: "text", name: "username", label: "username", className: "aaaa", update: this.update }),
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(MyInput, { type: "password", name: "password", label: "password", className: "bbbb", update: this.update })
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(MyInput, { type: "text", name: "username", label: "Usuario", className: this.state.alertMessage !== '' && this.state.error !== 1 ? 'wrong-input' : '', update: this.update }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(MyInput, { type: "password", name: "password", label: "Contrase\xF1a", className: this.state.alertMessage !== '' && this.state.error !== 0 ? 'wrong-input' : '', update: this.update })
           ),
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             "div",
