@@ -32,11 +32,10 @@ class MyInput extends React.Component{
     );
   }
 }
-export default class Login extends React.Component{
+export default class Index extends React.Component{
   constructor(props){
     super(props);
     this.state = {
-      hidden: true,
       error: 0,
       
       loading: false,
