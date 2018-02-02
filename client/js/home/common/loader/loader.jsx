@@ -1,22 +1,17 @@
 module.exports = {
-  template: require("./menuT.js"),
+  template: require("./loaderT.jsx"),
   props: {},
   data: function(){
     return {
-      menu: [
-        {
-          title: "Inicio",
-          path: "/"
-        },
-        {
-          title: "Test",
-          path: "/test"
-        }
-      ]
+      active: false,
+      message: "Cargando"
     };
   },
   computed: {},
-  methods: {},
+  methods: {
+    loading(){ this.active = true; },
+    loaded(){ this.active = false; }
+  },
   beforeCreate: function(){},
   created: function(){},
   beforeMount: function(){},

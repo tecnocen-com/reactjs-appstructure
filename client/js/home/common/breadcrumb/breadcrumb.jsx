@@ -1,19 +1,18 @@
 module.exports = {
-  template: require("./loaderT.js"),
+  template: require("./breadcrumbT.jsx"),
   props: {},
   data: function(){
     return {
-      active: false,
-      message: "Cargando"
+      home: "Inicio"
     };
   },
-  computed: {},
-  methods: {
-    loading(){ this.active = true; },
-    loaded(){ this.active = false; }
+  computed: {
+    path: function(){
+      return this.$route.fullPath.split("/");
+    }
   },
+  methods: {},
   beforeCreate: function(){},
-  created: function(){},
   beforeMount: function(){},
   mounted: function(){},
   beforeUpdate: function(){},

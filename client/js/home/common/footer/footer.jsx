@@ -1,23 +1,18 @@
 module.exports = {
-  template: require("./confirmT.js"),
+  template: require("./footerT.jsx"),
   props: {},
   data: function(){
     return {
-      description: {
-        title: "",
-        text: "",
-        accept: "",
-        cancel: ""
-      },
-      active: false
+      text: "&copy; 2017. <a href='#' v-on:click.prevent>Tecnocen</a>"
     };
   },
   computed: {},
-  methods: {
-    onAccept: function(){}
-  },
+  methods: {},
   beforeCreate: function(){},
-  created: function(){},
+  created: function(){
+      var me = this;
+      setInterval(function(){ return ++me.time; }, 1000);
+  },
   beforeMount: function(){},
   mounted: function(){},
   beforeUpdate: function(){},

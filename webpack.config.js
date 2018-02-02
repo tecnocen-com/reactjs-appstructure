@@ -4,8 +4,8 @@ var path = require("path"),
   debug = process.env.NODE_ENV !== "production";
 module.exports = {
   entry: {
-    index: "./client/js/index/index.js",
-    home: "./client/js/home/home.js"
+    index: "./client/js/index/index.jsx",
+    home: "./client/js/home/home.jsx"
   },
   output: {
     path: path.resolve(__dirname, "build"),
@@ -13,7 +13,7 @@ module.exports = {
   },
   module: {
     loaders: [{
-      test: /\.js$/,
+      test: /\.jsx$/,
       exclude: /node_modules/,
       loader: "babel-loader"
     }]

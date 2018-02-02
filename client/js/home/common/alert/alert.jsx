@@ -1,11 +1,14 @@
 module.exports = {
-  template: require("./headerT.js"),
-  props: {
-    profile: Object
-  },
+  template: require("./alertT.jsx"),
+  props: {},
   data: function(){
     return {
-      active: true
+      description: {
+        title: "",
+        text: "",
+        ok: ""
+      },
+      active: false
     };
   },
   computed: {},

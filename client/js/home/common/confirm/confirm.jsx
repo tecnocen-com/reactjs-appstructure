@@ -1,18 +1,23 @@
 module.exports = {
-  template: require("./breadcrumbT.js"),
+  template: require("./confirmT.jsx"),
   props: {},
   data: function(){
     return {
-      home: "Inicio"
+      description: {
+        title: "",
+        text: "",
+        accept: "",
+        cancel: ""
+      },
+      active: false
     };
   },
-  computed: {
-    path: function(){
-      return this.$route.fullPath.split("/");
-    }
+  computed: {},
+  methods: {
+    onAccept: function(){}
   },
-  methods: {},
   beforeCreate: function(){},
+  created: function(){},
   beforeMount: function(){},
   mounted: function(){},
   beforeUpdate: function(){},

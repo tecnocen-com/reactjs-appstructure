@@ -1,15 +1,19 @@
 module.exports = {
-  template: require("./dashboardT.js"),
+  template: require("./testT.jsx"),
   props: {
     myProp: Number
   },
   data: function(){
     return {
-      title: "Dashboard",
-      time: 0
+      title: "Test",
+      value: 0
     };
   },
-  computed: {},
+  computed: {
+    square: function(){
+      return this.value*this.value;
+    }
+  },
   methods: {},
   beforeCreate: function(){},
   created: function(){

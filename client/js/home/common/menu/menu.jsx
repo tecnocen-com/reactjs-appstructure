@@ -1,18 +1,24 @@
 module.exports = {
-  template: require("./footerT.js"),
+  template: require("./menuT.jsx"),
   props: {},
   data: function(){
     return {
-      text: "&copy; 2017. <a href='#' v-on:click.prevent>Tecnocen</a>"
+      menu: [
+        {
+          title: "Inicio",
+          path: "/"
+        },
+        {
+          title: "Test",
+          path: "/test"
+        }
+      ]
     };
   },
   computed: {},
   methods: {},
   beforeCreate: function(){},
-  created: function(){
-      var me = this;
-      setInterval(function(){ return ++me.time; }, 1000);
-  },
+  created: function(){},
   beforeMount: function(){},
   mounted: function(){},
   beforeUpdate: function(){},

@@ -1,4 +1,4 @@
-BUTO.template = require("./homeT.js");
+BUTO.template = require("./homeT.jsx");
 BUTO.modules = {
   modelAR: require("./plugins/axiosActiveRecord.js")
 };
@@ -26,13 +26,13 @@ axios.get("/init-user-data").then(function(userResponse){
               }
             },
             components: {
-              "loader": require("./common/loader/loader.js"),
-              "confirm": require("./common/confirm/confirm.js"),
-              "alert": require("./common/alert/alert.js"),
-              "heading": require("./common/header/header.js"),
-              "my-menu": require("./common/menu/menu.js"),
-              "breadcrumb": require("./common/breadcrumb/breadcrumb.js"),
-              "foot": require("./common/footer/footer.js")
+              "loader": require("./common/loader/loader.jsx"),
+              "confirm": require("./common/confirm/confirm.jsx"),
+              "alert": require("./common/alert/alert.jsx"),
+              "heading": require("./common/header/header.jsx"),
+              "my-menu": require("./common/menu/menu.jsx"),
+              "breadcrumb": require("./common/breadcrumb/breadcrumb.jsx"),
+              "foot": require("./common/footer/footer.jsx")
             },
             router: new VueRouter({
               routes: [

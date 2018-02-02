@@ -1,6 +1,6 @@
 module.exports = {
-  dashboard: require("./dashboard/dashboard.js"),
-  test: require("./test/test.js"),
+  dashboard: require("./dashboard/dashboard.jsx"),
+  test: require("./test/test.jsx"),
   
   home: `
     <div>
