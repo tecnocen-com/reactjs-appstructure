@@ -1,25 +1,23 @@
-module.exports = {
-  template: require("./loaderT.jsx"),
-  props: {},
-  data: function(){
-    return {
-      active: false,
-      message: "Cargando"
+import React from "react";
+
+export default class Header extends React.Component{
+  constructor(props){
+    super(props);
+    this.state = {
+      
     };
-  },
-  computed: {},
-  methods: {
-    loading(){ this.active = true; },
-    loaded(){ this.active = false; }
-  },
-  beforeCreate: function(){},
-  created: function(){},
-  beforeMount: function(){},
-  mounted: function(){},
-  beforeUpdate: function(){},
-  updated: function(){},
-  activated: function(){},
-  deactivated: function(){},
-  beforeDestroy: function(){},
-  destroyed: function(){}
-};
+  }
+  
+  render(){
+    var loader;
+    if(this.props.active)
+      loader = (
+      <div>
+        <b>{ this.props.message }</b>
+      </div>
+      );
+    else
+      loader = null;
+    return loader;
+  }
+}

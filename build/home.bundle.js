@@ -18257,7 +18257,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 
-var modelAR = __webpack_require__(30);
+var modelAR = __webpack_require__(33);
 
 axios.get("/init-user-data").then(function (userResponse) {
   if (userResponse.status === 200 && userResponse.data.success) (function () {
@@ -18365,6 +18365,12 @@ axios.get("/init-user-data").then(function (userResponse) {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__common_loader_loader_jsx__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__common_header_header_jsx__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__common_footer_footer_jsx__ = __webpack_require__(32);
+
+
+
 
 
 class Core extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
@@ -18375,20 +18381,14 @@ class Core extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
     return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
       "div",
       null,
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        "h1",
-        null,
-        this.props.profile.name
-      ),
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        "h2",
-        null,
-        this.props.profile.email
-      )
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__common_loader_loader_jsx__["a" /* default */], { active: false, message: "Cargando" }),
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__common_header_header_jsx__["a" /* default */], { profile: this.props.profile }),
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__common_footer_footer_jsx__["a" /* default */], { year: "2018" })
     );
   }
 }
 /* harmony export (immutable) */ __webpack_exports__["a"] = Core;
+
 
 //= {
 //  dashboard: require("./dashboard/dashboard.jsx"),
@@ -18423,6 +18423,111 @@ class Core extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
 
 /***/ }),
 /* 30 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+
+
+class Header extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+
+  render() {
+    var loader;
+    if (this.props.active) loader = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+      "div",
+      null,
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        "b",
+        null,
+        this.props.message
+      )
+    );else loader = null;
+    return loader;
+  }
+}
+/* harmony export (immutable) */ __webpack_exports__["a"] = Header;
+
+
+/***/ }),
+/* 31 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+
+
+class Header extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+
+  render() {
+    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+      "div",
+      null,
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        "a",
+        null,
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          "span",
+          null,
+          this.props.profile.name
+        )
+      ),
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        "a",
+        { href: "/logout" },
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("i", null),
+        " Cerrar Sesi\xF3n "
+      )
+    );
+  }
+}
+/* harmony export (immutable) */ __webpack_exports__["a"] = Header;
+
+
+/***/ }),
+/* 32 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+
+
+class Header extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+
+  render() {
+    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+      "div",
+      null,
+      "\xA9 ",
+      this.props.year,
+      ". ",
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        "a",
+        null,
+        "Tecnocen"
+      )
+    );
+  }
+}
+/* harmony export (immutable) */ __webpack_exports__["a"] = Header;
+
+
+/***/ }),
+/* 33 */
 /***/ (function(module, exports, __webpack_require__) {
 
 ///////////////////////////////////USE EXAMPLES/////////////////////////////////
@@ -18470,7 +18575,7 @@ class Core extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
 //  console.log(error);
 //});
 ////////////////////////////////////////////////////////////////////
-var querystring = __webpack_require__(31);
+var querystring = __webpack_require__(34);
 module.exports = function(init, activity, activityError){
   var me = this;
   
@@ -19134,18 +19239,18 @@ module.exports = function(init, activity, activityError){
 };
 
 /***/ }),
-/* 31 */
+/* 34 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-exports.decode = exports.parse = __webpack_require__(32);
-exports.encode = exports.stringify = __webpack_require__(33);
+exports.decode = exports.parse = __webpack_require__(35);
+exports.encode = exports.stringify = __webpack_require__(36);
 
 
 /***/ }),
-/* 32 */
+/* 35 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19236,7 +19341,7 @@ var isArray = Array.isArray || function (xs) {
 
 
 /***/ }),
-/* 33 */
+/* 36 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";

@@ -1,24 +1,18 @@
-module.exports = {
-  template: require("./footerT.jsx"),
-  props: {},
-  data: function(){
-    return {
-      text: "&copy; 2017. <a href='#' v-on:click.prevent>Tecnocen</a>"
+import React from "react";
+
+export default class Header extends React.Component{
+  constructor(props){
+    super(props);
+    this.state = {
+      
     };
-  },
-  computed: {},
-  methods: {},
-  beforeCreate: function(){},
-  created: function(){
-      var me = this;
-      setInterval(function(){ return ++me.time; }, 1000);
-  },
-  beforeMount: function(){},
-  mounted: function(){},
-  beforeUpdate: function(){},
-  updated: function(){},
-  activated: function(){},
-  deactivated: function(){},
-  beforeDestroy: function(){},
-  destroyed: function(){}
-};
+  }
+  
+  render(){
+    return (
+      <div>
+        &copy; { this.props.year }. <a>Tecnocen</a>
+      </div>
+    );
+  }
+}

@@ -1,23 +1,19 @@
-module.exports = {
-  template: require("./headerT.jsx"),
-  props: {
-    profile: Object
-  },
-  data: function(){
-    return {
-      active: true
+import React from "react";
+
+export default class Header extends React.Component{
+  constructor(props){
+    super(props);
+    this.state = {
+      
     };
-  },
-  computed: {},
-  methods: {},
-  beforeCreate: function(){},
-  created: function(){},
-  beforeMount: function(){},
-  mounted: function(){},
-  beforeUpdate: function(){},
-  updated: function(){},
-  activated: function(){},
-  deactivated: function(){},
-  beforeDestroy: function(){},
-  destroyed: function(){}
-};
+  }
+  
+  render(){
+    return (
+      <div>
+        <a><span>{ this.props.profile.name }</span></a>
+        <a href="/logout"><i></i> Cerrar Sesión </a>
+      </div>
+    );
+  }
+}

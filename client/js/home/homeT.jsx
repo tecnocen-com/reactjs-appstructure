@@ -1,4 +1,7 @@
 import React from "react";
+import Loader from "./common/loader/loader.jsx";
+import Header from "./common/header/header.jsx";
+import Footer from "./common/footer/footer.jsx";
 
 export default class Core extends React.Component{
   constructor(props){
@@ -6,13 +9,17 @@ export default class Core extends React.Component{
   }
   render(){
     return (
-      <div>
-        <h1>{ this.props.profile.name }</h1>
-        <h2>{ this.props.profile.email }</h2>
-      </div>
+    <div>
+      <Loader active={ false } message="Cargando" />
+      
+      <Header profile={ this.props.profile } />
+      
+      <Footer year="2018" />
+    </div>
     );
   }
 }
+
 //= {
 //  dashboard: require("./dashboard/dashboard.jsx"),
 //  test: require("./test/test.jsx"),
