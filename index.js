@@ -36,6 +36,10 @@ app.use("/build", express.static(__dirname + "/build"));
 
 app.use("/js", express.static(__dirname + "/node_modules/axios/dist"));
 
+app.all('*', function(req, res) {
+  res.redirect("/");
+});
+
 //MongoClient.connect("mongodb://127.0.0.1:27017/alquimiaDB", function(error, database){
 //  if(error)
 //    console.log(error);
