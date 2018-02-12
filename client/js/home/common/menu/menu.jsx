@@ -1,8 +1,10 @@
-module.exports = {
-  template: require("./menuT.jsx"),
-  props: {},
-  data: function(){
-    return {
+import React from "react";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+
+export default class Menu extends React.Component{
+  constructor(props){
+    super(props);
+    this.state = {
       menu: [
         {
           title: "Inicio",
@@ -14,17 +16,19 @@ module.exports = {
         }
       ]
     };
-  },
-  computed: {},
-  methods: {},
-  beforeCreate: function(){},
-  created: function(){},
-  beforeMount: function(){},
-  mounted: function(){},
-  beforeUpdate: function(){},
-  updated: function(){},
-  activated: function(){},
-  deactivated: function(){},
-  beforeDestroy: function(){},
-  destroyed: function(){}
-};
+  }
+  
+  render(){
+    let i = 0,
+      menu = [];
+    for(; i < this.state.menu.length; i++)
+      menu.push(<li key={ this.state.menu[i].path }><Link to={ this.state.menu[i].path }>{ this.state.menu[i].title }</Link></li>);
+    return (
+      <div>
+        <ul>
+          { menu }
+        </ul>
+      </div>
+    );
+  }
+}

@@ -1,24 +1,33 @@
-module.exports = {
-  template: require("./breadcrumbT.jsx"),
-  props: {},
-  data: function(){
-    return {
-      home: "Inicio"
+import React from "react";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+
+export default class Breadcrumb extends React.Component{
+  constructor(props){
+    super(props);
+    this.state = {
+      home: "Inicio",
+      path: []
     };
-  },
-  computed: {
-    path: function(){
-      return this.$route.fullPath.split("/");
-    }
-  },
-  methods: {},
-  beforeCreate: function(){},
-  beforeMount: function(){},
-  mounted: function(){},
-  beforeUpdate: function(){},
-  updated: function(){},
-  activated: function(){},
-  deactivated: function(){},
-  beforeDestroy: function(){},
-  destroyed: function(){}
-};
+  }
+  
+  componentDidUpdate(prevProps){
+    let me = this;
+  }
+  
+  render(){
+    let i = 0,
+      breadcrumb = [];
+    breadcrumb.push(<li key={ this.state.home }>{ this.state.home }</li>);
+    for(; i < this.props.location.pathname.split("/").length; i++)
+      if(this.props.location.pathname.split("/")[i] !== "")
+        breadcrumb.push(<li key={ this.props.location.pathname.split("/")[i] }>{ this.props.location.pathname.split("/")[i] }</li>);
+    return (
+      <div>
+        <h4><b>Breadcrumb</b></h4>
+        <ul>
+          { breadcrumb }
+        </ul>
+      </div>
+    );
+  }
+}

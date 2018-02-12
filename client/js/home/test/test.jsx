@@ -1,31 +1,28 @@
-module.exports = {
-  template: require("./testT.jsx"),
-  props: {
-    myProp: Number
-  },
-  data: function(){
-    return {
+import React from "react";
+
+export default class Test extends React.Component{
+  constructor(props){
+    super(props);
+    this.state = {
       title: "Test",
       value: 0
     };
-  },
-  computed: {
-    square: function(){
-      return this.value*this.value;
-    }
-  },
-  methods: {},
-  beforeCreate: function(){},
-  created: function(){
-      var me = this;
-      setInterval(function(){ return ++me.time; }, 1000);
-  },
-  beforeMount: function(){},
-  mounted: function(){},
-  beforeUpdate: function(){},
-  updated: function(){},
-  activated: function(){},
-  deactivated: function(){},
-  beforeDestroy: function(){},
-  destroyed: function(){}
-};
+    this.handleValue = this.handleValue.bind(this);
+  }
+  
+  handleValue(e){
+    this.setState({ value: e.target.value });
+  }
+  
+  render(){
+    return (
+      <div>
+        <h1>{ this.state.title }</h1>
+        <div>
+          <input value={ this.state.value } onChange={ this.handleValue } type="number" />
+          <span>Valor al cuadrado: { this.state.value * this.state.value }</span>
+        </div>
+      </div>
+    );
+  }
+}

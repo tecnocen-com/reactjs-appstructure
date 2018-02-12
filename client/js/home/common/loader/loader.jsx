@@ -9,15 +9,12 @@ export default class Header extends React.Component{
   }
   
   render(){
-    var loader;
     if(this.props.active)
-      loader = (
+      return (
       <div>
         <b>{ this.props.message }</b>
       </div>
       );
-    else
-      loader = null;
-    return loader;
+    return null;
   }
 }
