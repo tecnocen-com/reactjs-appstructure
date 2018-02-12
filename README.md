@@ -1,4 +1,4 @@
-vuejs-appstructure
+reactjs-appstructure
 ============
 ## Translations
 * [English]
@@ -44,12 +44,12 @@ Where ```<VERSION>``` is the last installed version.
 ### Proyect installation
 #### Clone repository:
 ```bash
-$ git clone https://github.com/tecnocen-com/vuejs-appstructure.git
+$ git clone https://github.com/tecnocen-com/reactjs-appstructure.git
 ```
 
 #### Place in the project root path:
 ```bash
-$ cd vuejs-appstructure
+$ cd reactjs-appstructure
 ```
 
 #### Define all the initial data of your project:
@@ -68,12 +68,12 @@ Line 6 ```tokenURL``` refers to the part of the URL to access the ROA service au
 * **```package.json```:** In this file you'll define some other data of your project.
 ```bash
 ...
-2 |   "name": "vuejs-appstructure",
+2 |   "name": "reactjs-appstructure",
 3 |   "version": "0.1.0",
-4 |   "description": "Structure for web applications based on vueJS framework",
+4 |   "description": "Structure for web applications based on reactJS framework",
 ...
 10 |   "keywords": [
-11 |     "vueJS"
+11 |     "reactJS"
 12 |   ],
 13 |   "author": "Marcos Jesús Chávez Vega",
 14 |   "license": "ISC",
@@ -89,7 +89,7 @@ Line 14 ```"license"``` refers to the project author, edit with appropiated lice
 * **```CHANGELOG.md```:** In this file you'll define all functions of the project, read more about this on [arquitecture standards] of tecnocen, on section [changes control].
 ```bash
 ...
-1 | vuejs-appstructure
+1 | reactjs-appstructure
 ...
 ```
 Line 1 refers to project name, edit with appropiated name.
@@ -97,16 +97,16 @@ Line 1 refers to project name, edit with appropiated name.
 * **```README.md```:** In this file you'll define all the project characteristics, such as installation, use and definition.
 ```bash
 ...
-1 | vuejs-appstructure
+1 | reactjs-appstructure
 ...
-57 | $ git clone https://github.com/tecnocen-com/vuejs-appstructure.git
+47 | $ git clone https://github.com/tecnocen-com/reactjs-appstructure.git
 ...
-63 | $ cd vuejs-appstructure
+52 | $ cd reactjs-appstructure
 ...
 ```
 Line 1 refers to the project name, edit with appropiated value.
-Line 57 refers to the project repository URL, edit with appropiated value.
-Line 63 refers to the project directory after clone, edit with appropiated value.
+Line 47 refers to the project repository URL, edit with appropiated value.
+Line 52 refers to the project directory after clone, edit with appropiated value.
 
 Modify the rest of the file according to the project.
 
@@ -132,7 +132,7 @@ $ npm install
 
 NOTES:
 - Directory ```test``` inside of ```home```, has an starting component view example, which could be duplicated any time it's needed in order to have the real project running.
-- To include the duplicated components to the views of the project, they should be included in both files ```home.js``` and ```homeT.js``` inside of the directory ```home``` in orde to include and render them; and so on in ```menu.js``` file inside of the ```common/menu``` directory.
+- To include the duplicated components to the views of the project, they should be included in both files ```home.js``` and ```homeT.js``` inside of the directory ```home``` in order to include and render them; and so on in ```menu.js``` file inside of the ```common/menu``` directory.
 
 ## Visibility
 #### Changes visibility:
@@ -171,44 +171,36 @@ After this, all the next files should be updated:
 * **```client/index.html```:** In this file will be included all the login minified files.
 ```bash
 ...
-24 |     <script type="text/javascript" src="/js/vue.js"></script>
-25 |     <script type="text/javascript" src="/js/vue-router.js"></script>
-26 |     <script type="text/javascript" src="/js/axios.js"></script>
+20 |     <script type="text/javascript" src="/js/axios.js"></script>
 ...
-30 |     <!--<script type="text/javascript" src="/js/vue.min.js"></script>
-31 |     <script type="text/javascript" src="/js/vue-router.min.js"></script>
-32 |     <script type="text/javascript" src="/js/axios.min.js"></script>-->
+24 |     <!--<script type="text/javascript" src="/js/axios.min.js"></script>-->
 ...
-36 |     <script type="text/javascript" src="/build/index.bundle.js"></script>
+28 |     <script type="text/javascript" src="/build/index.bundle.js"></script>
 ...
-40 |     <!--<script type="text/javascript" src="/build/index.min.js"></script>-->
+32 |     <!--<script type="text/javascript" src="/build/index.min.js"></script>-->
 ...
 ```
-Lines 24 to 26 should be commented, because it includes vueJS in development environment.
-Lines 30 to 32 should be uncommented, because it includes vueJS in production environment.
-Line 36 should be commented, because it includes all webpack core files in development environment.
-Line 40 should be uncommented, because it includes all webpack core files in production environment.
+Lines 20 should be commented, because it includes axios in development environment.
+Lines 24 should be uncommented, because it includes axios in production environment.
+Line 28 should be commented, because it includes all webpack core files in development environment.
+Line 32 should be uncommented, because it includes all webpack core files in production environment.
 
 * **```client/home.html```:** In this file will be included all the rest of minified files in the project.
 ```bash
 ...
-26 |     <script type="text/javascript" src="/js/vue.js"></script>
-27 |     <script type="text/javascript" src="/js/vue-router.js"></script>
-28 |     <script type="text/javascript" src="/js/axios.js"></script>
+20 |     <script type="text/javascript" src="/js/axios.js"></script>
 ...
-32 |     <!--<script type="text/javascript" src="/js/vue.min.js"></script>
-33 |     <script type="text/javascript" src="/js/vue-router.min.js"></script>
-34 |     <script type="text/javascript" src="/js/axios.min.js"></script>-->
+24 |     <!--<script type="text/javascript" src="/js/axios.min.js"></script>-->
 ...
-38 |     <script type="text/javascript" src="/build/home.bundle.js"></script>
+28 |     <script type="text/javascript" src="/build/home.bundle.js"></script>
 ...
-42 |     <!--<script type="text/javascript" src="/build/home.min.js"></script>-->
+32 |     <!--<script type="text/javascript" src="/build/home.min.js"></script>-->
 ...
 ```
-Lines 26 to 28 should be commented, because it includes vueJS in development environment.
-Lines 32 to 34 should be uncommented, because it includes vueJS in production environment.
-Line 38 should be commented, because it includes all webpack core files in development environment.
-Line 42 should be uncommented, because it includes all webpack core files in production environment.
+Lines 20 should be commented, because it includes axios in development environment.
+Lines 24 should be uncommented, because it includes axios in production environment.
+Line 28 should be commented, because it includes all webpack core files in development environment.
+Line 32 should be uncommented, because it includes all webpack core files in production environment.
 
 Finally, in order to see the project running on the browser:
 ```bash

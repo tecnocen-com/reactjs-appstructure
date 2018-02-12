@@ -4,7 +4,7 @@ var express = require("express"),
   session = require("client-sessions"),           //Sessions handler from mozilla
   requestHandlers = require("./requestHandlers"); //Modulo customizado para actuar según URL
 app.use(session({
-  cookieName: "vueJSAppStructure",
+  cookieName: "reactJSAppStructure",
   secret: "sapasdasdopaks+oaskdsfisdudfdssdpuohsdfsdf",
   duration: 24*60*60*1000,       //Milliseconds, 1 hour will kill cookie
   activeDuration: 15*60*1000,  //Milliseconds, 5 minutes of inactivity will kill cookie
@@ -21,7 +21,7 @@ app.post("/login", function(request, response){     //Doesn"t support express.st
   });
 });
 app.get("/logout", function(request, response){
-  request.vueJSAppStructure.reset();
+  request.reactJSAppStructure.reset();
   response.redirect("/");
 });
 app.get("/init-user-data", function(request, response){

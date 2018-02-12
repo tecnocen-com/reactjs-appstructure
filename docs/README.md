@@ -1,4 +1,4 @@
-vuejs-appstructure
+reactjs-appstructure
 ============
 ## Traducciones
 * [Inglés]
@@ -44,12 +44,12 @@ En donde ```<VERSION>``` es la última versión instalada.
 ### Instalación de proyecto
 ####Clonar el repositorio:
 ```bash
-$ git clone https://github.com/tecnocen-com/vuejs-appstructure.git
+$ git clone https://github.com/tecnocen-com/reactjs-appstructure.git
 ```
 
 ####Entrar en el proyecto:
 ```bash
-$ cd vuejs-appstructure
+$ cd reactjs-appstructure
 ```
 
 ####Editar las condiciones iniciales del proyecto a desarrollar:
@@ -68,12 +68,12 @@ La línea 6 ```tokenURL``` se refiere a accesso a la autenticación del servicio
 * **```package.json```:** En este archivo se definirán otros datos relacionados con el proyecto.
 ```bash
 ...
-2 |   "name": "vuejs-appstructure",
+2 |   "name": "reactjs-appstructure",
 3 |   "version": "0.1.0",
-4 |   "description": "Structure for web applications based on vueJS framework",
+4 |   "description": "Structure for web applications based on reactJS framework",
 ...
 10 |   "keywords": [
-11 |     "vueJS"
+11 |     "reactJS"
 12 |   ],
 13 |   "author": "Marcos Jesús Chávez Vega",
 14 |   "license": "ISC",
@@ -89,7 +89,7 @@ La línea 14 ```"license"``` se refiere a la licencia del proyecto, sustituir co
 * **```CHANGELOG.md```:** En este archivo se definirán las funcionalidades del proyecto, para más información leer los [estándares de arquitectura] de tecnocen, en la sección [control de cambios].
 ```bash
 ...
-1 | vuejs-appstructure
+1 | reactjs-appstructure
 ...
 ```
 La línea 1 se refiere al nombre del proyecto, sustituir su valor con el nombre del proyecto.
@@ -97,16 +97,16 @@ La línea 1 se refiere al nombre del proyecto, sustituir su valor con el nombre 
 * **```README.md```:** En este archivo se definirán las características de instalación, uso y definición del proyecto.
 ```bash
 ...
-1 | vuejs-appstructure
+1 | reactjs-appstructure
 ...
-57 | $ git clone https://github.com/tecnocen-com/vuejs-appstructure.git
+47 | $ git clone https://github.com/tecnocen-com/reactjs-appstructure.git
 ...
-63 | $ cd vuejs-appstructure
+52 | $ cd reactjs-appstructure
 ...
 ```
 La línea 1 se refiere al nombre del proyecto, sustituir su valor con el nombre del proyecto.
-La línea 57 se refiere a la URL para poder clonar el proyecto, sustituir con el valor apropiado.
-La línea 63 se refiere a la carpeta creada al clonar el proyecto, sustituir con el valor apropiado.
+La línea 47 se refiere a la URL para poder clonar el proyecto, sustituir con el valor apropiado.
+La línea 52 se refiere a la carpeta creada al clonar el proyecto, sustituir con el valor apropiado.
 
 Con respecto a la demás descripción en este archivo, modificar a conveniencia.
 
@@ -171,44 +171,36 @@ Posteriormente deberán modificarse los siguientes archivos:
 * **```client/index.html```:** En este archivo se incluirán los archivos minificados para el login del proyecto.
 ```bash
 ...
-24 |     <script type="text/javascript" src="/js/vue.js"></script>
-25 |     <script type="text/javascript" src="/js/vue-router.js"></script>
-26 |     <script type="text/javascript" src="/js/axios.js"></script>
+20 |     <script type="text/javascript" src="/js/axios.js"></script>
 ...
-30 |     <!--<script type="text/javascript" src="/js/vue.min.js"></script>
-31 |     <script type="text/javascript" src="/js/vue-router.min.js"></script>
-32 |     <script type="text/javascript" src="/js/axios.min.js"></script>-->
+24 |     <!--<script type="text/javascript" src="/js/axios.min.js"></script>-->
 ...
-36 |     <script type="text/javascript" src="/build/index.bundle.js"></script>
+28 |     <script type="text/javascript" src="/build/index.bundle.js"></script>
 ...
-40 |     <!--<script type="text/javascript" src="/build/index.min.js"></script>-->
+32 |     <!--<script type="text/javascript" src="/build/index.min.js"></script>-->
 ...
 ```
-Las líneas 24 a 26 deberán comentarse, ya que incluyen a vueJS en ambiente de desarollo.
-Las líneas 30 a 32 deberán descomentarse, ya que incluyen a vueJS en ambiente de producción.
-La línea 36 deberá comentarse, ya que incluye al core del proyecto generado por webpack en ambiente de desarrollo.
-La línea 40 deberá descomentarse, ya que incluye al core del proyecto generado por webpack en ambiente de producción.
+La línea 20 deberán comentarse, ya que incluyen a axios en ambiente de desarrollo.
+La línea 24 deberán descomentarse, ya que incluyen a axios en ambiente de producción.
+La línea 28 deberá comentarse, ya que incluye al core del proyecto generado por webpack en ambiente de desarrollo.
+La línea 32 deberá descomentarse, ya que incluye al core del proyecto generado por webpack en ambiente de producción.
 
 * **```client/home.html```:** En este archivo se incluirán los archivos minificados para todo el resto del proyecto.
 ```bash
 ...
-26 |     <script type="text/javascript" src="/js/vue.js"></script>
-27 |     <script type="text/javascript" src="/js/vue-router.js"></script>
-28 |     <script type="text/javascript" src="/js/axios.js"></script>
+20 |     <script type="text/javascript" src="/js/axios.js"></script>
 ...
-32 |     <!--<script type="text/javascript" src="/js/vue.min.js"></script>
-33 |     <script type="text/javascript" src="/js/vue-router.min.js"></script>
-34 |     <script type="text/javascript" src="/js/axios.min.js"></script>-->
+24 |     <!--<script type="text/javascript" src="/js/axios.min.js"></script>-->
 ...
-38 |     <script type="text/javascript" src="/build/home.bundle.js"></script>
+28 |     <script type="text/javascript" src="/build/home.bundle.js"></script>
 ...
-42 |     <!--<script type="text/javascript" src="/build/home.min.js"></script>-->
+32 |     <!--<script type="text/javascript" src="/build/home.min.js"></script>-->
 ...
 ```
-Las líneas 26 a 28 deberán comentarse, ya que incluyen a vueJS en ambiente de desarollo.
-Las líneas 32 a 34 deberán descomentarse, ya que incluyen a vueJS en ambiente de producción.
-La línea 38 deberá comentarse, ya que incluye al core del proyecto generado por webpack en ambiente de desarrollo.
-La línea 42 deberá descomentarse, ya que incluye al core del proyecto generado por webpack en ambiente de producción.
+La línea 20 deberán comentarse, ya que incluyen a axios en ambiente de desarrollo.
+La línea 24 deberán descomentarse, ya que incluyen a axios en ambiente de producción.
+La línea 28 deberá comentarse, ya que incluye al core del proyecto generado por webpack en ambiente de desarrollo.
+La línea 32 deberá descomentarse, ya que incluye al core del proyecto generado por webpack en ambiente de producción.
 
 Para finalmente visualizar el proyecto en el navegador:
 ```bash
