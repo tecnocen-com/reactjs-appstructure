@@ -1,7 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import axios from "axios";
 import Core from "./homeT.jsx";
-var modelAR = require("./plugins/axiosActiveRecord.js");
+import modelAR from "./plugins/axiosActiveRecord.jsx";
 
 axios.get("/init-user-data").then(function(userResponse){
   if(userResponse.status === 200 && userResponse.data.success)

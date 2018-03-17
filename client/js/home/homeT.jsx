@@ -1,18 +1,18 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
-import Loader from "./common/loader/loader.jsx";
-import Confirm from "./common/confirm/confirm.jsx";
-import Alert from "./common/alert/alert.jsx";
-import Header from "./common/header/header.jsx";
+import Loader from "./common/loader.jsx";
+import Confirm from "./common/confirm.jsx";
+import Alert from "./common/alert.jsx";
+import Header from "./common/header.jsx";
 
-import Menu from "./common/menu/menu.jsx";
-import Breadcrumb from "./common/breadcrumb/breadcrumb.jsx";
+import Menu from "./common/menu.jsx";
+import Breadcrumb from "./common/breadcrumb.jsx";
 
 import Dashboard from "./dashboard/dashboard.jsx";
 import Test from "./test/test.jsx";
 
-import Footer from "./common/footer/footer.jsx";
+import Footer from "./common/footer.jsx";
 
 export default class Core extends React.Component{
   constructor(props){
