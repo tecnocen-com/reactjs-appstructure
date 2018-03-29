@@ -1,6 +1,6 @@
 import React from "react";
 
-export default class Header extends React.Component{
+export default class Dashboard extends React.Component{
   constructor(props){
     super(props);
     this.state = {

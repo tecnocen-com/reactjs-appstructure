@@ -25415,7 +25415,7 @@ class Header extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 
 
-class Header extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
+class Dashboard extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -25491,7 +25491,7 @@ class Header extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
     );
   }
 }
-/* harmony export (immutable) */ __webpack_exports__["a"] = Header;
+/* harmony export (immutable) */ __webpack_exports__["a"] = Dashboard;
 
 
 /***/ }),
