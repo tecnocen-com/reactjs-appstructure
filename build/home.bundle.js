@@ -57,7 +57,7 @@
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "";
+/******/ 	__webpack_require__.p = "/build/";
 /******/
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(__webpack_require__.s = 75);
@@ -21314,9 +21314,9 @@ __WEBPACK_IMPORTED_MODULE_2_axios___default.a.get("/init-user-data").then(functi
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__common_header_jsx__ = __webpack_require__(108);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__common_menu_jsx__ = __webpack_require__(109);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__common_breadcrumb_jsx__ = __webpack_require__(110);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__dashboard_dashboard_jsx__ = __webpack_require__(111);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__test_test_jsx__ = __webpack_require__(112);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__common_footer_jsx__ = __webpack_require__(113);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__common_footer_jsx__ = __webpack_require__(111);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__dashboard_dashboard_jsx__ = __webpack_require__(112);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__test_test_jsx__ = __webpack_require__(113);
 
 
 
@@ -21405,19 +21405,19 @@ class Core extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["c" /* Route */], { path: "/", component: __WEBPACK_IMPORTED_MODULE_7__common_breadcrumb_jsx__["a" /* default */] }),
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["c" /* Route */], { exact: true,
             path: "/",
-            render: () => __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_8__dashboard_dashboard_jsx__["a" /* default */], {
+            render: () => __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_9__dashboard_dashboard_jsx__["a" /* default */], {
               open: this.open,
               onAccept: this.onAccept,
               close: this.close }) }),
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["c" /* Route */], { exact: true,
             path: "/test",
-            render: () => __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_9__test_test_jsx__["a" /* default */], {
+            render: () => __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_10__test_test_jsx__["a" /* default */], {
               open: this.open,
               onAccept: this.onAccept,
               close: this.close }) })
         )
       ),
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_10__common_footer_jsx__["a" /* default */], { year: this.state.year })
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_8__common_footer_jsx__["a" /* default */], { year: this.state.year })
     );
   }
 }
@@ -25385,6 +25385,39 @@ class Breadcrumb extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component
 class Header extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
   constructor(props) {
     super(props);
+    this.state = {};
+  }
+
+  render() {
+    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+      "div",
+      null,
+      "\xA9 ",
+      this.props.year,
+      ". ",
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        "a",
+        null,
+        "Tecnocen"
+      )
+    );
+  }
+}
+/* harmony export (immutable) */ __webpack_exports__["a"] = Header;
+
+
+/***/ }),
+/* 112 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+
+
+class Header extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
+  constructor(props) {
+    super(props);
     this.state = {
       title: "Dashboard",
       time: 0
@@ -25462,7 +25495,7 @@ class Header extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
 
 
 /***/ }),
-/* 112 */
+/* 113 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -25508,39 +25541,6 @@ class Test extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
   }
 }
 /* harmony export (immutable) */ __webpack_exports__["a"] = Test;
-
-
-/***/ }),
-/* 113 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-
-
-class Header extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
-  render() {
-    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-      "div",
-      null,
-      "\xA9 ",
-      this.props.year,
-      ". ",
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        "a",
-        null,
-        "Tecnocen"
-      )
-    );
-  }
-}
-/* harmony export (immutable) */ __webpack_exports__["a"] = Header;
 
 
 /***/ }),

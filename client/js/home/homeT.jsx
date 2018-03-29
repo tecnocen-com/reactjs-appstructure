@@ -9,10 +9,10 @@ import Header from "./common/header.jsx";
 import Menu from "./common/menu.jsx";
 import Breadcrumb from "./common/breadcrumb.jsx";
 
+import Footer from "./common/footer.jsx";
+
 import Dashboard from "./dashboard/dashboard.jsx";
 import Test from "./test/test.jsx";
-
-import Footer from "./common/footer.jsx";
 
 export default class Core extends React.Component{
   constructor(props){

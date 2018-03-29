@@ -9,7 +9,9 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, "build"),
+    publicPath: "/build/", // always string
     filename: debug ? "[name].bundle.js" : "[name].min.js",
+    chunkFilename: debug ? "[name]/[name].bundle.js" : "[name]/[name].min.js"
   },
   module: {
     loaders: [{
