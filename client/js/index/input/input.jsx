@@ -12,10 +12,10 @@ export default class MyInput extends React.Component{
   handleChange(e){
     this.setState({
       value: e.target.value
-    });
+    }, ()=> this.handleKey(null) );
   }
   handleKey(e){
-    this.props.update({ [this.props.name]: this.state.value }, e.keyCode);
+    this.props.update({ [this.props.name]: this.state.value }, e ? e.keyCode : e)
   }
   render(){
     return (

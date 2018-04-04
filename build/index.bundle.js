@@ -19949,8 +19949,18 @@ class Index extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             "div",
             null,
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__input_input_jsx__["a" /* default */], { type: "text", name: "username", label: "Usuario", className: this.state.alertMessage !== '' && this.state.error !== 1 ? 'wrong-input' : '', update: this.update }),
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__input_input_jsx__["a" /* default */], { type: "password", name: "password", label: "Contrase\xF1a", className: this.state.alertMessage !== '' && this.state.error !== 0 ? 'wrong-input' : '', update: this.update })
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__input_input_jsx__["a" /* default */], {
+              type: "text",
+              name: "username",
+              label: "Usuario",
+              className: this.state.alertMessage !== '' && this.state.error !== 1 ? 'wrong-input' : '',
+              update: this.update }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__input_input_jsx__["a" /* default */], {
+              type: "password",
+              name: "password",
+              label: "Contrase\xF1a",
+              className: this.state.alertMessage !== '' && this.state.error !== 0 ? 'wrong-input' : '',
+              update: this.update })
           ),
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             "div",
@@ -20020,10 +20030,10 @@ class MyInput extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
   handleChange(e) {
     this.setState({
       value: e.target.value
-    });
+    }, () => this.handleKey(null));
   }
   handleKey(e) {
-    this.props.update({ [this.props.name]: this.state.value }, e.keyCode);
+    this.props.update({ [this.props.name]: this.state.value }, e ? e.keyCode : e);
   }
   render() {
     return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(

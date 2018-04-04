@@ -76,8 +76,18 @@ export default class Index extends React.Component{
               <h4>{ this.props.subtitle }</h4>
             </div>
             <div>
-              <MyInput type="text" name="username" label="Usuario" className={ this.state.alertMessage !== '' && this.state.error !== 1 ? 'wrong-input' : '' } update={ this.update } />
-              <MyInput type="password" name="password" label="Contraseña" className={ this.state.alertMessage !== '' && this.state.error !== 0 ? 'wrong-input' : '' } update={ this.update } />
+              <MyInput
+              type="text"
+              name="username"
+              label="Usuario"
+              className={ this.state.alertMessage !== '' && this.state.error !== 1 ? 'wrong-input' : '' }
+              update={ this.update } />
+              <MyInput
+              type="password"
+              name="password"
+              label="Contraseña"
+              className={ this.state.alertMessage !== '' && this.state.error !== 0 ? 'wrong-input' : '' }
+              update={ this.update } />
             </div>
             <div>
               <p><b>{ this.state.alertMessage }</b></p>
